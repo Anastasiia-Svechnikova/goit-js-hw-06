@@ -1,7 +1,7 @@
 function checkInputLength(inputselector) {
 	const inputRef = document.querySelector(inputselector);
 	const requiredLength = Number(inputRef.dataset.length);
-	console.log(requiredLength);
+
 	inputRef.addEventListener('input', onInputRef);
 
 	function onInputRef(event) {
