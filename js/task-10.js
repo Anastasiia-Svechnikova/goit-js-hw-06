@@ -4,12 +4,14 @@ const amountRef = controlsRef.firstElementChild;
 const createBtnRef = amountRef.nextElementSibling;
 const destroyBtnRef = controlsRef.lastElementChild;
 
+console.log(amountRef);
+
 createBtnRef.addEventListener('click', onCreateBtnRef);
 destroyBtnRef.addEventListener('click', onDestroyBtnRef);
 
 function onDestroyBtnRef() {
 	boxesRef.innerHTML = '';
-	amountRef.value = 0;
+	amountRef.value = '';
 }
 
 function onCreateBtnRef() {
