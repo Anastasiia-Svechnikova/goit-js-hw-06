@@ -23,15 +23,17 @@ function getRandomHexColor() {
 }
 
 function createBoxes(amount) {
-	let width = 30;
-	let height = 30;
 	let markup = ``;
 
 	for (let i = 0; i < amount; i += 1) {
-		markup += `<div style="background-color: ${getRandomHexColor()}; width:${width}px; height: ${height}px; margin: 5px"></div>`;
-		height += 10;
-		width += 10;
+		markup += `<div style="background-color: ${getRandomHexColor()};margin: 5px"></div>`;
 	}
 
 	boxesRef.insertAdjacentHTML('afterbegin', markup);
+
+	const arr = [...boxesRef.children];
+	arr.forEach((div, index) => {
+		div.style.width = `${30 + 10 * (index + 1)}px`;
+		div.style.height = `${30 + 10 * (index + 1)}px`;
+	});
 }
