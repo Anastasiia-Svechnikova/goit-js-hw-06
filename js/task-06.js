@@ -10,6 +10,7 @@ function checkInputLength(inputselector) {
 		inputRef.addEventListener('blur', () => {
 			if (!(inputLength === requiredLength)) {
 				inputRef.classList.add('invalid');
+				inputRef.classList.remove('valid');
 			} else {
 				inputRef.classList.replace('invalid', 'valid');
 			}
